@@ -8,6 +8,8 @@ extends CharacterBody2D
 const GRAVITY: float = 1900.0
 const POWER: float = -400.0
 
+var _dead:bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -27,7 +29,12 @@ func fly() -> void:
 		animation_player.play("fly")
 
 func die() -> void:
+	if _dead==true:
+		return
+	
+	_dead=true
 	animated_sprite_2d.stop()
+	animation_player.stop()
 	GameManager.on_game_over.emit()
 	set_physics_process(false)
 
