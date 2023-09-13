@@ -50,7 +50,6 @@ scale = Vector2(1, 8)
 texture = ExtResource("1_50rev")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(79, 0)
 shape = SubResource("RectangleShape2D_eb74b")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
